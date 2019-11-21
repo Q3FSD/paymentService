@@ -9,4 +9,5 @@ import com.mentorondemand.paymentservice.entities.Payments;
 
 public interface PaymentRepository extends CrudRepository<Payments, Long> {
 
+	Iterable<Payments> findAllByMentorName(String mentorName);
 }
