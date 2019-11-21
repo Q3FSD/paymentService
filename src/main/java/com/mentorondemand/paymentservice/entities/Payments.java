@@ -1,4 +1,4 @@
-package com.mentorondemand.trainingservice.entities;
+package com.mentorondemand.paymentservice.entities;
 
 import java.io.Serializable;
 
@@ -28,17 +28,14 @@ public class Payments implements Serializable {
 	@Column(name = "amount", nullable = false)
 	private Float amount;
 
+	@Column(name = "user_name", nullable = false)
+	private String userName;
+
+	@Column(name = "mentor_name", nullable = false)
+	private String mentorName;
+
 	@Column(name = "remarks")
 	private String remarks;
-
-	@Column(name = "mentor_id")
-	private Long mentorId;
-
-	@Column(name = "training_id")
-	private Long trainingId;
-
-	@Column(name = "total_amount_to_mentor")
-	private Float totalAmountToMentor;
 
 	public Payments() {
 	}
@@ -67,36 +64,28 @@ public class Payments implements Serializable {
 		this.amount = amount;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getMentorName() {
+		return mentorName;
+	}
+
+	public void setMentorName(String mentorName) {
+		this.mentorName = mentorName;
+	}
+
 	public String getRemarks() {
 		return remarks;
 	}
 
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
-	}
-
-	public Long getMentorId() {
-		return mentorId;
-	}
-
-	public void setMentorId(Long mentorId) {
-		this.mentorId = mentorId;
-	}
-
-	public Long getTrainingId() {
-		return trainingId;
-	}
-
-	public void setTrainingId(Long trainingId) {
-		this.trainingId = trainingId;
-	}
-
-	public Float getTotalAmountToMentor() {
-		return totalAmountToMentor;
-	}
-
-	public void setTotalAmountToMentor(Float totalAmountToMentor) {
-		this.totalAmountToMentor = totalAmountToMentor;
 	}
 
 }

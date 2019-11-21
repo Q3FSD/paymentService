@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mentorondemand</groupId>
-	<artifactId>trainingService</artifactId>
+	<artifactId>paymentService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>user</name>
+	<name>payment</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
