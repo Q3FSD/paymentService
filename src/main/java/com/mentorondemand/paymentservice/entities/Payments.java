@@ -1,6 +1,7 @@
 package com.mentorondemand.paymentservice.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * The persistent class for the payments database table.
@@ -34,8 +39,10 @@ public class Payments implements Serializable {
 	@Column(name = "mentor_name", nullable = false)
 	private String mentorName;
 
-	@Column(name = "remarks")
-	private String remarks;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "txn_time", nullable = false)
+	private Date txnTime;
 
 	public Payments() {
 	}
@@ -80,12 +87,12 @@ public class Payments implements Serializable {
 		this.mentorName = mentorName;
 	}
 
-	public String getRemarks() {
-		return remarks;
+	public Date getTxnTime() {
+		return txnTime;
 	}
 
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
+	public void setTxnTime(Date txnTime) {
+		this.txnTime = txnTime;
 	}
 
 }

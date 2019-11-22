@@ -1,5 +1,7 @@
 package com.mentorondemand.paymentservice.controllers;
 
+import java.util.Calendar;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,7 @@ public class PaymentController {
 	public @ResponseBody Payments pay(@Valid @RequestBody Payments payment) {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
+		payment.setTxnTime(Calendar.getInstance().getTime());
 		return paymentRepository.save(payment);
 	}
 
