@@ -18,7 +18,7 @@ import com.mentorondemand.paymentservice.entities.Payments;
 import com.mentorondemand.paymentservice.services.PaymentRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://111.231.63.123:4200")
 @RequestMapping(path = "/v1/pay")
 public class PaymentController {
 	@Autowired // This means to get the bean called trainingRepository
