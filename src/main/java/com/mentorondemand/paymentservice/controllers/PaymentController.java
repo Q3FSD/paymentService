@@ -5,7 +5,6 @@ import java.util.Calendar;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +17,6 @@ import com.mentorondemand.paymentservice.entities.Payments;
 import com.mentorondemand.paymentservice.services.PaymentRepository;
 
 @RestController
-@CrossOrigin(origins = "http://111.231.63.123:4200")
 @RequestMapping(path = "/v1/pay")
 public class PaymentController {
 	@Autowired // This means to get the bean called trainingRepository
